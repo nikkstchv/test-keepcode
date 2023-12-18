@@ -1,0 +1,109 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #242424;
+  background-color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+.main {
+  display: flex;
+  height: calc(100vh - 1rem);
+  width: 100%;
+  .task-list-container {
+    width: 100%;
+    max-width: 920px;
+    height: 100%;
+    margin: 0 auto;
+
+    .el-tabs__new-tab {
+      margin: -1px !important;
+      height: 38px !important;
+      width: 38px !important;
+      border-radius: 0 !important;
+      svg { 
+        transform: scale(2)
+      }
+    }
+    .el-tabs__content {
+      height: calc(100% - 69px);
+      display: flex;
+      flex-direction: column;
+      .el-tab-pane {
+        overflow-y: auto;
+      }
+      .task-card {
+        &:not(:last-of-type) {
+          margin-bottom: 1rem;
+        }
+        .content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .title {
+            text-align: initial;
+            word-wrap: anywhere;
+          }
+          .controls {
+            display: flex
+          }
+        }
+      }
+    }
+  }
+}
+.el-message-box__message {
+  font-weight: bold;
+  font-size: var(--el-font-size-large);
+  text-align: center;
+  color: var(--el-text-color-primary);
+}
+.el-form-item__label {font-weight: bold;}
+.el-checkbox__label {font-weight: bold}
+.el-dialog {
+  max-width: 800px !important;
+  .el-dialog__title { font-weight: bold }
+}
+.el-message-box__btns {
+  justify-content: center;
+}
+.el-badge__content {
+  margin-right: -10px;
+  margin-top: 4px;
+}
+.el-badge__content.is-fixed {
+  transform: translateY(-50%) translateX(100%) scale(0.8) !important;
+}
+.el-tabs__item {
+  padding-right: 38px !important;
+}
+
+@media screen and (max-width: 1000px) {
+  .demo {
+    .task-list-container {
+      width: 100%;
+      max-height: 70%;
+      min-height: 70%;
+      .el-tabs__content {
+        .task-card {
+          &:not(:last-of-type) {
+            margin-bottom: .75rem;
+          }
+        }
+      }
+      .el-card__body {
+        padding: .6rem;
+      }
+    }
+  }
+}
+
+
